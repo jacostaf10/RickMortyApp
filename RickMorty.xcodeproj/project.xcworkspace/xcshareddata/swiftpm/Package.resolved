@@ -1,0 +1,24 @@
+{
+  "originHash" : "d7080f2bad03ff589220b5183c94ec6b24bd9a3c25ffb47615f5598aa731f90a",
+  "pins" : [
+    {
+      "identity" : "rickmortynet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jacostaf10/RickMortyNet.git",
+      "state" : {
+        "revision" : "25e3f59ff5bbf2a84b1791d03308f510f49952a1",
+        "version" : "0.0.9"
+      }
+    },
+    {
+      "identity" : "swiftnet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jacostaf10/SwiftNet.git",
+      "state" : {
+        "revision" : "efddace138110696fe85362cc0e157876d7a4f51",
+        "version" : "0.0.3"
+      }
+    }
+  ],
+  "version" : 3
+}
