@@ -8,11 +8,38 @@
 import SwiftUI
 
 struct EpisodesView: View {
+    @Environment(ViewModel.self) var vm
+    @Binding var routes: [Route]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack(path: $routes) {
+            List(vm.episodes) { episode in
+                Button {
+                    routes.append(.episode(episode))
+                } label: {
+                    VStack(alignment: .leading) {
+                        Text(episode.name)
+                        Text(episode.episode)
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .buttonStyle(.plain)
+
+            }
+            .navigationTitle("Episodes")
+            .navigationDestination(for: Route.self) { route in
+                switch route {
+                case .episode(let episode):
+                    EpisodeDetail(episode: episode)
+                default: EmptyView()
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    EpisodesView()
+    EpisodesView(routes: .constant([]))
+        .environment(ViewModel())
 }
