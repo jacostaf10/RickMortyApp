@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct RickMortyApp: App {
+    @State var vm = ViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(vm)
         }
     }
 }
